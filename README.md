@@ -15,6 +15,7 @@ These examples are intentionally minimal. They explain architecture and implemen
 | [dotnet-crash-report-api-boundary](./dotnet-crash-report-api-boundary) | [Moving Desktop Crash Report Delivery Behind an API Boundary](https://erselcakmak.com/articles/why-i-moved-mail-sending-behind-an-api) |
 | [cad-ai-render-provider](./cad-ai-render-provider) | [Adding AI Render Variations to a CAD Workflow](https://erselcakmak.com/articles/adding-ai-render-variations-to-a-cad-application) |
 | [protobuf-template-loader](./protobuf-template-loader) | [Saving and Loading Desktop Templates With Protobuf](https://erselcakmak.com/articles/saving-and-loading-templates-with-protobuf) |
+| [native-crash-worker-isolation](./native-crash-worker-isolation) | [When try/catch Isn't Enough: Isolating Native Crashes with a Worker Process](https://erselcakmak.com/articles/isolating-native-crashes-with-a-worker-process) |
 
 ## Notes
 

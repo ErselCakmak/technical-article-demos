@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NativeCrashIsolation.Protocol\NativeCrashIsolation.Protocol.csproj" />
+    <ProjectReference Include="..\NativeCrashIsolation.Worker\NativeCrashIsolation.Worker.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <Target Name="CopyWorkerArtifacts" AfterTargets="Build">
+    <PropertyGroup>
+      <WorkerOutputDirectory>$(MSBuildProjectDirectory)\..\NativeCrashIsolation.Worker\bin\$(Configuration)\net8.0\</WorkerOutputDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <WorkerArtifacts Include="$(WorkerOutputDirectory)NativeCrashIsolation.Worker.dll" />
+      <WorkerArtifacts Include="$(WorkerOutputDirectory)NativeCrashIsolation.Worker.deps.json" />
+      <WorkerArtifacts Include="$(WorkerOutputDirectory)NativeCrashIsolation.Worker.runtimeconfig.json" />
+      <WorkerArtifacts Include="$(WorkerOutputDirectory)NativeCrashIsolation.Protocol.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(WorkerArtifacts)" DestinationFolder="$(OutDir)worker" SkipUnchangedFiles="true" />
+  </Target>
+</Project>
